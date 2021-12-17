@@ -49,7 +49,7 @@ if (isset ($_POST['g-recaptcha-response']) &&! empty ($_POST ['g-recaptcha-respo
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = 'skorix.prive@gmail.com';             // SMTP username
             $mail->Password = 'm4th1s$14';                           // SMTP password
-            $mail->SMTPSecure = 'tls';                            // Enable SSL encryption, TLS also accepted with port 465
+            $mail->SMTPSecure = 'ssl';                            // Enable SSL encryption, TLS also accepted with port 465
             $mail->Port = 587;                                    // TCP port to connect to
 
             //Recipients
