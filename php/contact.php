@@ -26,12 +26,11 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 
-if (isset ($_POST['g-recaptcha-response']) &&! empty ($_POST ['g-recaptcha-response'])) {
+if (isset ($_POST['g-recaptcha-response']) && ! empty ($_POST ['g-recaptcha-response'])) {
     $secret = '6LenWKwdAAAAAKvfKK4TYu6I2qgYOvQNnxFpu7Zl'; 
     $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']); 
     $responseData = json_decode ($verifyResponse); 
-    if ($responseData-> success) {$succMsg = 'Votre demande de contact a été envoyée avec succès.'; } 
-        else {$errMsg = 'La vérification du robot a échoué, veuillez réessayer.';}
+    if ($responseData-> success) {} 
 
     if( !empty($_POST)){
 
@@ -49,7 +48,7 @@ if (isset ($_POST['g-recaptcha-response']) &&! empty ($_POST ['g-recaptcha-respo
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
             $mail->Username = 'skorix.prive@gmail.com';             // SMTP username
             $mail->Password = 'm4th1s$14';                           // SMTP password
-            $mail->SMTPSecure = 'ssl';                            // Enable SSL encryption, TLS also accepted with port 465
+            $mail->SMTPSecure = 's';                            // Enable SSL encryption, TLS also accepted with port 465
             $mail->Port = 587;                                    // TCP port to connect to
 
             //Recipients
